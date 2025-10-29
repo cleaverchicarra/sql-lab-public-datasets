@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16
+    container_name: sql_lab_db
+    environment:
+      POSTGRES_USER: student
+      POSTGRES_PASSWORD: sql123
+      POSTGRES_DB: lab
+    ports:
+      - "5432:5432"
+    volumes:
+      - ../datasets:/docker-entrypoint-initdb.d
